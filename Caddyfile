@@ -1,0 +1,24 @@
+{
+    # email for Let's Encrypt account
+    email {$SSL_EMAIL}
+
+    # use staging for testing, comment out for production
+    # Note that Staging certificates are not trusted by browsers or curl.
+    # They’re for testing only, so SSL verification fails
+    # acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    acme_ca https://acme-v02.api.letsencrypt.org/directory
+
+    # enable environment variables
+    # (Caddy automatically supports env variables like {$CF_TOKEN})
+}
+
+# your wildcard domain
+{$APP_DOMAIN} {
+    # reverse proxy to your app
+    reverse_proxy app:3000
+
+    # use Cloudflare DNS-01 for TLS
+    tls {
+        dns cloudflare {$CF_API_TOKEN}
+    }
+}

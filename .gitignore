@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+npm-debug.log
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDEs
+.vscode/
+
+# Build artifacts
+dist/
+build/
