@@ -15,7 +15,7 @@ This project provides a setup for running a web application with Caddy in Docker
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/farzad1120/local-ssl-caddy.git
-    cd caddy-docker-cloudflare
+    cd local-ssl-caddy
     ```
 
 2.  **Create a Cloudflare API Token:**
